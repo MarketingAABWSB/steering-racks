@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pakar Steering Rack EPS | Azam Auto Berek 12</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { black: '#121212', red: '#E30613', yellow: '#F7B500', gray: '#F9FAFB' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* ── Scroll Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Pulse CTA ── */
+    .pulse-btn {
+      animation: pulse-red 2.2s infinite;
+    }
+
+    @keyframes pulse-red {
+      0% {
+        box-shadow: 0 0 0 0 rgba(227, 6, 19, .55);
+        transform: scale(1);
+      }
+
+      60% {
+        box-shadow: 0 0 0 14px rgba(227, 6, 19, 0);
+        transform: scale(1.01);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(227, 6, 19, 0);
+        transform: scale(1);
+      }
+    }
+
+    /* ── Hover Cards ── */
+    .hover-card {
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, .12);
+    }
+
+    /* ── Brand Logo Marquee ── */
+    .marquee-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-wrap::before,
+    .marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+    }
+
+    .marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, white, transparent);
+    }
+
+    .marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, white, transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 22s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee-scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .brand-logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 28px;
+      opacity: 1;
+      transition: opacity .3s, transform .3s;
+      white-space: nowrap;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      margin: 0 10px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .05);
+    }
+
+    .brand-logo-item:hover {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+
+    .brand-logo-item img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-logo-item span {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: .05em;
+      color: #555;
+    }
+
+    /* ── Before/After Slider ── */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    .img-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img-foreground {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      border-right: 3px solid #fff;
+      z-index: 10;
+    }
+
+    .slider {
+      position: absolute;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      outline: none;
+      margin: 0;
+      z-index: 20;
+      cursor: ew-resize;
+      pointer-events: auto !important;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 38px;
+      height: 38px;
+      background: #fff;
+      border-radius: 50%;
+      border: 3px solid #E30613;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+      cursor: ew-resize;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 38px;
+      height: 38px;
+      background: #fff;
+      border-radius: 50%;
+      border: 3px solid #E30613;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+      cursor: ew-resize;
+    }
+
+    .aspect-ratio-box {
+      padding-top: 56.25%;
+      position: relative;
+    }
+
+    /* ── Accordion ── */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s ease-out;
+    }
+
+    /* ── Hero image glow ── */
+    .hero-img-wrap {
+      position: relative;
+    }
+
+    .hero-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      background: linear-gradient(135deg, #E30613 0%, #F7B500 100%);
+      border-radius: 22px;
+      z-index: -1;
+      opacity: .22;
+      filter: blur(18px);
+    }
+
+    /* ── Section divider stripe ── */
+    .stripe-bg {
+      background-color: #f9fafb;
+      background-image: repeating-linear-gradient(-45deg,
+          transparent,
+          transparent 20px,
+          rgba(0, 0, 0, .018) 20px,
+          rgba(0, 0, 0, .018) 40px);
+    }
+
+    /* ── Timeline connector ── */
+    .timeline-line {
+      position: absolute;
+      top: 22px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #e5e7eb 0%, #E30613 100%);
+      z-index: 0;
+    }
+
+    /* ── WA pulse ── */
+    @keyframes pulse-wa {
+      0% {
+        transform: scale(.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, .7);
+      }
+
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        transform: scale(.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .wa-pulse {
+      animation: pulse-wa 2s infinite;
+    }
+
+    /* ── Stat badge ── */
+    .stat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: #374151;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .07);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-brand-black antialiased">
+
+  <!-- ── Top Banner ── -->
+  <div class="w-full bg-brand-black text-white text-xs md:text-sm py-2.5 text-center font-semibold tracking-wide">
+    <span class="text-brand-yellow"><i class="fas fa-exclamation-circle"></i> PERHATIAN:</span>
+    Langkah 1 daripada 3 — Sila buat pengesahan slot anda hari ini. Hanya <span class="text-brand-yellow underline">7
+      Slot Harian</span> Disediakan!
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 — HERO
+  ══════════════════════════════════════ -->
+  <section id="utama" class="relative bg-white pt-2 pb-2 overflow-hidden flex flex-col justify-center">
+    <!-- DotField Background -->
+    <div id="dot-field-container" class="absolute inset-0 w-full h-full z-0 pointer-events-auto"></div>
+
+    <div
+      class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center flex-grow py-2 z-10 pointer-events-none">
+
+      <!-- Left Copy -->
+      <div class="reveal active pointer-events-auto">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 bg-red-50 text-brand-red text-[10px] md:text-xs font-bold tracking-widest uppercase mb-3 rounded-md">
+          <span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span>
+          Pusat Pakar Steering Rack EPS
+        </div>
+
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight mb-2 text-zinc-900 tracking-tight">
+          Pernahkah Anda Rasa Stereng Kereta Tiba-Tiba Berat, Bergegar Di Lebuhraya, Atau Terdengar Bunyi <span
+            class="text-brand-red">'Kluk-Kluk'</span> Setiap Kali Langgar Lubang?
+        </h1>
+        <p class="text-sm md:text-base text-zinc-600 mb-4 font-medium leading-relaxed max-w-lg">
+          Awas! Jangan anggap ia perkara biasa. Kerosakan pada sistem Electric Power Steering (EPS) bukan sekadar isu
+          bunyi, ia boleh membahayakan nyawa anda dan keluarga pada bila-bila masa!
+        </p>
+
+        <!-- Solid Trust Badges -->
+        <div class="flex flex-col gap-1.5 mb-5 text-xs md:text-sm text-zinc-800 font-bold">
+          <div class="flex items-center gap-2.5">
+            <i class="fas fa-check-circle text-green-600 text-base"></i>
+            <span>Pemeriksaan Unit Percuma</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <i class="fas fa-check-circle text-green-600 text-base"></i>
+            <span>Jaminan Kualiti 3 Bulan</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <i class="fas fa-check-circle text-green-600 text-base"></i>
+            <span>Pelarasan tayar (Alignment) secara percuma!</span>
+          </div>
+        </div>
+
+        <a href="#harga"
+          class="inline-block text-center w-full md:w-max bg-brand-red text-white font-extrabold text-sm py-3 px-6 rounded-lg shadow-md hover:bg-red-700 transition-colors uppercase tracking-wide">
+          TEMPAH SLOT PROMOSI SAYA SEKARANG!
+        </a>
+      </div>
+
+      <!-- Right Visual -->
+      <div class="reveal active relative mt-6 md:mt-0 pointer-events-auto">
+        <!-- Clean structural frame -->
+        <div class="relative bg-zinc-50 border border-zinc-200 p-2 sm:p-3 rounded-2xl shadow-xl">
+          <div
+            class="absolute top-4 right-4 bg-brand-red text-white text-[10px] font-bold px-3 py-1.5 rounded flex items-center gap-2 z-20 shadow-sm">
+            <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> LIVE DEMO
+          </div>
+
+          <img src="images/hero_mechanic_1783398604159.png" alt="Mekanik Azam Auto sedang bekerja"
+            class="w-full h-auto object-cover rounded-xl">
+
+          <!-- Solid Rating badge -->
+          <div
+            class="absolute -bottom-4 -left-4 bg-white border border-zinc-200 p-4 rounded-xl flex items-center gap-4 shadow-lg z-20">
+            <div
+              class="w-12 h-12 shrink-0 rounded-full bg-brand-yellow flex items-center justify-center text-brand-black font-black text-xl">
+              4.9</div>
+            <div>
+              <div class="text-yellow-500 text-xs tracking-widest mb-1 flex gap-0.5">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <div class="text-[10px] text-zinc-500 uppercase font-bold tracking-wide">Kepuasan Pelanggan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── LOGO MARQUEE ── -->
+    <div class="max-w-5xl mx-auto px-4 mt-auto pt-16 pb-4 border-t border-zinc-100 relative z-10 w-full">
+      <p class="text-center text-[10px] font-bold text-zinc-400 mb-5 uppercase tracking-[.2em]">Dipercayai Untuk Jenama
+        Kenderaan</p>
+
+      <div class="marquee-wrap">
+        <div class="marquee-track">
+          <!-- Set 1 -->
+          <div class="brand-logo-item">
+            <img src="images/perodua-seeklogo.png" alt="Perodua">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/proton-seeklogo.png" alt="Proton">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/toyota-seeklogo.png" alt="Toyota">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/honda-silver-seeklogo.png" alt="Honda">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/nissan-seeklogo.png" alt="Nissan">
+          </div>
+
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div class="brand-logo-item">
+            <img src="images/perodua-seeklogo.png" alt="Perodua">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/proton-seeklogo.png" alt="Proton">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/toyota-seeklogo.png" alt="Toyota">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/honda-silver-seeklogo.png" alt="Honda">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/nissan-seeklogo.png" alt="Nissan">
+          </div>
+
+          <!-- Set 3 (extra duplicate for wide screens) -->
+          <div class="brand-logo-item">
+            <img src="images/perodua-seeklogo.png" alt="Perodua">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/proton-seeklogo.png" alt="Proton">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/toyota-seeklogo.png" alt="Toyota">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/honda-silver-seeklogo.png" alt="Honda">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/nissan-seeklogo.png" alt="Nissan">
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>
+
+    <!-- ══════════════════════════════════════
+       SECTION 2 — SYMPTOMS
+  ══════════════════════════════════════ -->
+    <section id="simptom" class="py-14 stripe-bg">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Adakah Kereta Anda Mengalami Simptom Ini?</h2>
+          <p class="text-gray-500 text-base leading-relaxed mb-6">Masa berjalan, komponen mekanikal haus. Hentakan,
+            cuaca panas, dan jalan berlubang di Malaysia menjadikan komponen getah (seal & boot) cepat keras dan bocor,
+            membiarkan air masuk merosakkan sistem dalaman.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover-card reveal group">
+            <div
+              class="w-12 h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="font-bold text-base mb-1">Stereng Berat</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Tiba-tiba sukar membelok terutama ketika parkir.</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover-card reveal group">
+            <div
+              class="w-12 h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+              <i class="fas fa-volume-up"></i>
+            </div>
+            <h3 class="font-bold text-base mb-1">Bunyi "Kluk-Kluk"</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Ketukan kasar pada model Alza, Myvi, Axia dan Bezza.</p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover-card reveal group">
+            <div
+              class="w-12 h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+              <i class="fas fa-wave-square"></i>
+            </div>
+            <h3 class="font-bold text-base mb-1">Stereng Bergegar</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Gegaran di tapak tangan, menghilangkan ketenangan memandu.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover-card reveal group">
+            <div
+              class="w-12 h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+              <i class="fas fa-car-crash"></i>
+            </div>
+            <h3 class="font-bold text-base mb-1">Tayar Makan Sebelah</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Tayar haus tidak rata, menghilangkan cengkaman brek.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 3 — KENAPA ROSAK
+  ══════════════════════════════════════ -->
+    <section id="punca" class="bg-zinc-950 text-white overflow-hidden">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2">
+
+        <!-- Left: Image fills full height -->
+        <div class="reveal relative min-h-[300px] md:min-h-full">
+          <img src="images/broken_steering_rack_1783398613951.png" alt="Komponen Steering Rack Berkarat"
+            class="absolute inset-0 w-full h-full object-cover opacity-80">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-zinc-950 hidden md:block">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent md:hidden"></div>
+          <div class="absolute top-5 left-5">
+            <span
+              class="inline-flex items-center gap-2 bg-brand-red text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+              <i class="fas fa-exclamation-triangle"></i> Komponen Rosak
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="reveal px-6 py-10 md:px-10 lg:px-14 flex flex-col justify-center">
+          <p class="text-brand-red text-xs font-bold uppercase tracking-widest mb-2">Punca Masalah</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-2 leading-tight">Mengapa Boleh Rosak?</h2>
+          <p class="text-zinc-400 text-base leading-relaxed mb-8">Iklim dan keadaan jalan di Malaysia sering menyebabkan
+            3 kerosakan kronik ini:</p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 group-hover:border-brand-red group-hover:bg-brand-red/10 transition-colors duration-200 flex items-center justify-center font-black text-xl text-zinc-400 group-hover:text-brand-red">
+                1</div>
+              <div class="border-b border-zinc-800 pb-4 flex-grow">
+                <h4 class="font-bold text-sm text-white mb-1">Bushing Plastik Haus &amp; Hancur</h4>
+                <p class="text-sm text-zinc-400 leading-relaxed">Hentakan berulang pada jalan berlubang akan memampatkan
+                  guide bushing (penahan aci), menyebabkan aci (shaft) mula bergetar.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-xl bg-zinc-800 border border-zinc-700 group-hover:border-brand-red group-hover:bg-brand-red/10 transition-colors duration-200 flex items-center justify-center font-black text-xl text-zinc-400 group-hover:text-brand-red">
+                2</div>
+              <div class="border-b border-zinc-800 pb-4 flex-grow">
+                <h4 class="font-bold text-sm text-white mb-1">Musuh Utama — Air &amp; Pasir</h4>
+                <p class="text-sm text-zinc-400 leading-relaxed">Boot getah stereng yang koyak membenarkan air hujan
+                  membasuh gris pelincir, menyebabkan kakisan dan karat yang teruk.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-red/20 border border-brand-red flex items-center justify-center font-black text-xl text-brand-red">
+                3</div>
+              <div class="flex-grow">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <h4 class="font-bold text-sm text-brand-red">Risiko Maut "Total Steering Lock"</h4>
+                  <span
+                    class="text-[9px] bg-brand-red text-white font-bold px-1.5 py-0.5 rounded uppercase tracking-wide">Bahaya!</span>
+                </div>
+                <p class="text-sm text-zinc-400 leading-relaxed">Karat dan herotan gear boleh menyebabkan stereng
+                  <strong>tersangkut (jammed)</strong> secara tiba-tiba ketika sedang membelok.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+       SECTION 4 — BEFORE / AFTER SLIDER
+  ══════════════════════════════════════ -->
+    <section class="py-14 bg-brand-black text-white text-center">
+      <div class="max-w-4xl mx-auto px-4 reveal">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Perbezaan Ketara Kualiti Kami</h2>
+        <p class="text-gray-400 mb-8 text-sm max-w-xl mx-auto">Berhenti membahayakan nyawa anda. Lihat sendiri beza
+          komponen rosak dan komponen <em>original refurbished</em> yang dipasang. <span class="text-brand-yellow">Seret
+            slider untuk compare.</span></p>
+
+        <div id="react-compare-slider-root" class="relative shadow-2xl ring-1 ring-white/10 rounded-xl overflow-hidden aspect-video">
+          <!-- React Compare Slider will be mounted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 5 — KENAPA AZAM AUTO
+  ══════════════════════════════════════ -->
+    <section class="py-20 bg-zinc-50 relative" id="kenapa">
+      <!-- Background pattern -->
+      <div class="absolute inset-0 pointer-events-none opacity-40"
+        style="background-image:radial-gradient(#d4d4d8 1px,transparent 1px);background-size:24px 24px;"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal relative z-10">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red/10 text-brand-red text-[10px] font-bold tracking-widest uppercase mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse"></span>
+          Pilihan Tepat
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-zinc-900 tracking-tight">Mengapa Selesaikan Hari Ini Di
+          Azam Auto Berek 12?</h2>
+        <p class="text-zinc-500 mb-12 text-base max-w-2xl mx-auto leading-relaxed">Kami mahu mengembalikan penjenamaan
+          Cawangan Berek 12 kami sebagai Pusat Pakar (Speciality) dalam pembaikan dan penukaran steering rack kenderaan
+          EPS anda!</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-zinc-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center text-zinc-900 text-xl mb-5 group-hover:bg-brand-red group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+              <i class="fas fa-tools"></i></div>
+            <h4 class="font-bold text-base text-zinc-900 mb-2">Pakar EPS</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">Pusat Pakar Pembaikan Steering Rack yang dipercayai.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-zinc-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center text-zinc-900 text-xl mb-5 group-hover:bg-brand-red group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+              <i class="fas fa-wallet"></i></div>
+            <h4 class="font-bold text-base text-zinc-900 mb-2">Jimat Kos</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">Rawat sekarang sebelum kos pembaikan melambung berkali
+              ganda!</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-zinc-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center text-zinc-900 text-xl mb-5 group-hover:bg-brand-red group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+              <i class="fas fa-car-side"></i></div>
+            <h4 class="font-bold text-base text-zinc-900 mb-2">Rasa Kereta Baru</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">Tiada lagi gegaran, kembalikan ketenangan ketika memandu.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-zinc-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center text-zinc-900 text-xl mb-5 group-hover:bg-brand-red group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+              <i class="fas fa-award"></i></div>
+            <h4 class="font-bold text-base text-zinc-900 mb-2">Waranti 3 Bulan</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">100% perlindungan waranti tanpa sebarang risiko kerugian.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="flex flex-col items-center text-center p-8 bg-white rounded-3xl border border-zinc-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group">
+            <div
+              class="w-14 h-14 bg-zinc-50 rounded-2xl flex items-center justify-center text-zinc-900 text-xl mb-5 group-hover:bg-brand-red group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+              <i class="fas fa-cog"></i></div>
+            <h4 class="font-bold text-base text-zinc-900 mb-2">Unit Refurbished</h4>
+            <p class="text-sm text-zinc-500 leading-relaxed">Menggunakan unit alat ganti Original Refurbished tulen.</p>
+          </div>
+
+          <!-- Card 6: Highlighted -->
+          <div
+            class="flex flex-col items-center text-center p-8 bg-gradient-to-br from-brand-red to-red-700 rounded-3xl border border-red-500 shadow-[0_8px_30px_rgba(220,38,38,0.2)] hover:shadow-[0_12px_40px_rgba(220,38,38,0.3)] hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20">
+            </div>
+            <div
+              class="w-14 h-14 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center text-white text-xl mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-inner relative z-10">
+              <i class="fas fa-tag"></i></div>
+            <h4 class="font-bold text-base text-white mb-2 relative z-10">Pakej All-In</h4>
+            <p class="text-sm text-red-100 leading-relaxed relative z-10">Tawaran pakej gila-gila untuk anda yang buat
+              keputusan hari ini.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 6 — PROCESS TIMELINE
+  ══════════════════════════════════════ -->
+    <section class="py-12 bg-white border-y border-gray-100">
+      <div class="max-w-5xl mx-auto px-4 text-center reveal">
+        <h2 class="text-xl md:text-2xl font-extrabold mb-10">Proses Pemasangan Profesional KAMI</h2>
+        <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-0">
+          <div class="timeline-line hidden md:block"></div>
+
+          <!-- Steps -->
+          <div class="flex flex-col items-center z-10 bg-white px-3 w-full md:w-auto">
+            <div
+              class="w-12 h-12 rounded-full bg-brand-black text-white flex items-center justify-center text-lg shadow-md mb-2">
+              <i class="fas fa-search"></i></div>
+            <p class="font-bold text-sm">Pemeriksaan</p>
+          </div>
+          <div class="flex flex-col items-center z-10 bg-white px-3 w-full md:w-auto">
+            <div
+              class="w-12 h-12 rounded-full bg-brand-black text-white flex items-center justify-center text-lg shadow-md mb-2">
+              <i class="fas fa-stethoscope"></i></div>
+            <p class="font-bold text-sm">Diagnos</p>
+          </div>
+          <div class="flex flex-col items-center z-10 bg-white px-3 w-full md:w-auto">
+            <div
+              class="w-12 h-12 rounded-full bg-brand-black text-white flex items-center justify-center text-lg shadow-md mb-2">
+              <i class="fas fa-wrench"></i></div>
+            <p class="font-bold text-sm">Tukar Unit</p>
+          </div>
+          <div class="flex flex-col items-center z-10 bg-white px-3 w-full md:w-auto">
+            <div
+              class="w-12 h-12 rounded-full bg-brand-black text-white flex items-center justify-center text-lg shadow-md mb-2">
+              <i class="fas fa-dharmachakra"></i></div>
+            <p class="font-bold text-sm">Alignment</p>
+          </div>
+          <div class="flex flex-col items-center z-10 bg-white px-3 w-full md:w-auto">
+            <div
+              class="w-12 h-12 rounded-full bg-brand-black text-white flex items-center justify-center text-lg shadow-md mb-2">
+              <i class="fas fa-road"></i></div>
+            <p class="font-bold text-sm">Road Test</p>
+          </div>
+          <div class="flex flex-col items-center z-10 bg-white px-3 w-full md:w-auto">
+            <div
+              class="w-12 h-12 rounded-full bg-brand-red text-white flex items-center justify-center text-lg shadow-lg mb-2">
+              <i class="fas fa-flag-checkered"></i></div>
+            <p class="font-bold text-sm text-brand-red">Selesai!</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm mt-8">Kerja pemasangan akan dijalankan secepat mungkin secara profesional
+          sehingga kenderaan selamat diserahkan semula kepada pelanggan.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 7 & 8 — PRICING
+  ══════════════════════════════════════ -->
+    <section id="harga" class="py-14 bg-gray-950 relative overflow-hidden">
+      <!-- bg decoration -->
+      <div class="absolute inset-0 pointer-events-none"
+        style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(227,6,19,.12), transparent);"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10 reveal">
+          <h2 class="text-2xl md:text-4xl font-extrabold mb-3 text-white uppercase">KEMPEN PROMOSI PEMULIHAN KEPAKARAN
+            STEERING RACK EPS</h2>
+          <p class="text-gray-300 text-sm">Kami faham, kos penukaran di pusat servis luar sangat mahal. Oleh itu, kami
+            bawakan Tawaran "Pakej All-In".</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+          <!-- Pricing Card 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 relative hover-card reveal flex flex-col">
+            <div class="bg-brand-black text-white py-4 text-center px-6">
+              <h3 class="text-xl font-bold uppercase tracking-wider">Sistem Motor Bawah</h3>
+              <p class="text-xs text-gray-400 uppercase mt-0.5">(Rak Stereng)</p>
+            </div>
+            <div class="p-7 text-center flex-grow flex flex-col">
+              <p class="text-gray-400 line-through text-sm mb-1">Harga Asal: RM1,500</p>
+              <div class="flex justify-center items-baseline mb-5">
+                <span class="text-2xl font-extrabold text-brand-red">RM</span>
+                <span class="text-6xl font-black text-brand-red tracking-tight leading-none">750</span>
+              </div>
+              <div class="space-y-3 text-left mb-6 flex-grow">
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Unit alat
+                  ganti Original Refurbished</p>
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Kos
+                  keseluruhan upah dan pemasangan</p>
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Pemeriksaan
+                  unit percuma</p>
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Pelarasan
+                  tayar (Alignment) percuma</p>
+              </div>
+              <a href="https://wa.me/60178441058?text=Saya%20nak%20tempah%20slot%20promosi%20Motor%20Bawah%20RM750"
+                class="block w-full bg-brand-red text-white font-bold py-3.5 rounded-xl hover:bg-red-700 transition-colors text-sm">
+                TEMPAH SLOT MOTOR BAWAH
+              </a>
+            </div>
+          </div>
+
+          <!-- Pricing Card 2 (Popular) -->
+          <div
+            class="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-brand-red relative hover-card reveal flex flex-col">
+            <div
+              class="absolute top-0 right-0 bg-brand-yellow text-brand-black font-bold text-[10px] px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+              Paling Laris</div>
+            <div class="bg-brand-red text-white py-4 text-center px-6">
+              <h3 class="text-xl font-bold uppercase tracking-wider">Sistem Motor Atas</h3>
+              <p class="text-xs text-red-200 uppercase mt-0.5">(Tiang Stereng)</p>
+            </div>
+            <div class="p-7 text-center flex-grow flex flex-col">
+              <p class="text-gray-400 line-through text-sm mb-1">Harga Asal: RM1,500</p>
+              <div class="flex justify-center items-baseline mb-5">
+                <span class="text-2xl font-extrabold text-brand-black">RM</span>
+                <span class="text-6xl font-black text-brand-black tracking-tight leading-none">850</span>
+              </div>
+              <div class="space-y-3 text-left mb-6 flex-grow">
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Unit alat
+                  ganti Original Refurbished</p>
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Kos
+                  keseluruhan upah dan pemasangan</p>
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Pemeriksaan
+                  unit percuma</p>
+                <p class="flex items-center text-sm"><i class="fas fa-check text-green-500 mr-2.5 w-4"></i> Pelarasan
+                  tayar (Alignment) percuma</p>
+              </div>
+              <a href="https://wa.me/60178441058?text=Saya%20nak%20tempah%20slot%20promosi%20Motor%20Atas%20RM850"
+                class="block w-full bg-brand-red text-white font-bold py-3.5 rounded-xl pulse-btn hover:bg-red-700 transition-colors text-sm">
+                TEMPAH SLOT MOTOR ATAS
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cara Tempahan -->
+        <div class="max-w-2xl mx-auto mt-10 bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl reveal">
+          <h4 class="font-bold text-base mb-4 text-center text-white">Cara Membuat Tempahan:</h4>
+          <ol class="space-y-3 text-gray-300 text-sm">
+            <li class="flex gap-3 items-start"><span
+                class="w-6 h-6 rounded-full bg-brand-red text-white text-xs flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</span><span>Klik
+                butang tempahan di atas untuk ke Payment Gateway.</span></li>
+            <li class="flex gap-3 items-start"><span
+                class="w-6 h-6 rounded-full bg-brand-red text-white text-xs flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</span><span>Bayar
+                deposit tempahan (booking) anda secara dalam talian (online).</span></li>
+            <li class="flex gap-3 items-start"><span
+                class="w-6 h-6 rounded-full bg-brand-red text-white text-xs flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</span><span>Resit
+                bukti pembayaran <strong class="text-brand-yellow">WAJIB</strong> dihantar terus ke nombor WhatsApp:
+                <strong class="text-white">+60 17-844 1058</strong> untuk pengesahan slot.</span></li>
+          </ol>
+          <p class="text-xs text-gray-500 mt-4 italic text-center">* Pemasangan tertakluk kepada sistem temujanji
+            (booking) yang diwajibkan bagi mengesahkan slot harian anda.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 9 — WARRANTY
+  ══════════════════════════════════════ -->
+    <section class="py-16 bg-white relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
+        <div
+          class="relative bg-zinc-950 rounded-3xl p-8 md:p-12 shadow-2xl border border-zinc-800 overflow-hidden text-center flex flex-col items-center justify-center">
+          <!-- subtle grid in the dark card -->
+          <div class="absolute inset-0"
+            style="background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;">
+          </div>
+
+          <!-- Glowing shield/seal -->
+          <div class="relative mb-6">
+            <div class="absolute inset-0 bg-brand-yellow rounded-full blur-xl opacity-20"></div>
+            <div
+              class="relative w-24 h-24 bg-gradient-to-br from-brand-yellow to-yellow-600 rounded-full flex flex-col items-center justify-center shadow-lg ring-4 ring-zinc-950 outline outline-2 outline-brand-yellow/30">
+              <i class="fas fa-shield-halved text-zinc-950 text-2xl mb-1"></i>
+              <span class="block text-2xl font-black text-zinc-950 leading-none">3</span>
+              <span class="block text-[8px] font-bold uppercase tracking-[0.2em] text-zinc-900 mt-0.5">Bulan</span>
+            </div>
+          </div>
+
+          <h2 class="text-2xl md:text-3xl font-extrabold mb-4 text-white uppercase tracking-wider relative z-10">Jaminan
+            Kualiti <span class="text-brand-yellow">3 Bulan</span></h2>
+
+          <p class="text-zinc-400 text-base leading-relaxed max-w-xl mx-auto relative z-10">
+            Setiap pemasangan steering rack di Azam Auto Berek 12 didatangkan bersama jaminan kualiti dan waranti
+            <strong>3 bulan</strong>. Anda dipandu dengan tenang, <span class="text-white">100% tanpa risiko
+              kerugian.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 10 — REVIEWS
+  ══════════════════════════════════════ -->
+    <section class="py-14 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-8 text-center">Apa Kata Pelanggan Kami?</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+            <div class="text-brand-yellow text-sm mb-3">★★★★★</div>
+            <p class="text-gray-700 italic mb-3 text-base leading-relaxed">"Kereta rasa macam baru keluar kedai, enjin
+              dah tak bergegar macam dulu."</p>
+            <p class="font-bold text-sm">— Hafiz, Alza</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+            <div class="text-brand-yellow text-sm mb-3">★★★★★</div>
+            <p class="text-gray-700 italic mb-3 text-base leading-relaxed">"Hadiah dekat husband, husband suka! Memang
+              kita rasa aman damai..."</p>
+            <p class="font-bold text-sm">— Pn. Aisyah</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+            <div class="text-brand-yellow text-sm mb-3">★★★★★</div>
+            <p class="text-gray-700 italic mb-3 text-base leading-relaxed">"Mula-mula ingat mahal, rupanya separuh harga
+              dari pusat servis luar. Siap dapat waranti lagi."</p>
+            <p class="font-bold text-sm">— Syafiq, Myvi</p>
+          </div>
+        </div>
+
+        <!-- WhatsApp Screenshots Placeholder -->
+        <div
+          class="bg-gray-50 border border-gray-200 p-6 rounded-2xl flex flex-col md:flex-row justify-center gap-4 items-center">
+          <div
+            class="w-full md:w-1/3 bg-white h-56 rounded-xl border border-gray-200 flex items-center justify-center text-gray-400 font-semibold flex-col gap-2 text-sm">
+            <i class="fab fa-whatsapp text-3xl text-green-500"></i>
+            Screenshot WhatsApp 1
+          </div>
+          <div
+            class="w-full md:w-1/3 bg-white h-56 rounded-xl border border-gray-200 flex items-center justify-center text-gray-400 font-semibold flex-col gap-2 text-sm">
+            <i class="fab fa-whatsapp text-3xl text-green-500"></i>
+            Screenshot WhatsApp 2
+          </div>
+          <div
+            class="w-full md:w-1/3 bg-white h-56 rounded-xl border border-gray-200 flex items-center justify-center text-gray-400 font-semibold flex-col gap-2 text-sm">
+            <i class="fab fa-whatsapp text-3xl text-green-500"></i>
+            Screenshot WhatsApp 3
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 12 — COUNTDOWN
+  ══════════════════════════════════════ -->
+    <section class="py-10 bg-red-50 border-y border-red-100 reveal">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-xl font-extrabold text-brand-red mb-2"><i class="fas fa-stopwatch mr-2"></i>AMARAN: TAWARAN
+          TERHAD!</h2>
+        <p class="text-gray-700 mb-6 text-base max-w-2xl mx-auto">
+          Promosi jualan runtuh ini hanya sah bermula 8 Julai 2026 sehingga 31 Julai 2026 SAHAJA, khas untuk melepaskan
+          stok sedia ada yang terhad di Berek 12. Harga ini juga HANYA diberikan kepada anda yang membuat tempahan
+          eksklusif menerusi Landing Page ini sahaja!
+        </p>
+        <div class="flex justify-center gap-3 text-brand-red">
+          <div
+            class="flex flex-col items-center bg-white border border-red-200 w-18 h-18 w-[4.5rem] h-[4.5rem] justify-center rounded-xl shadow-sm">
+            <span id="cd-days" class="text-2xl font-extrabold leading-none">00</span>
+            <span class="text-[10px] uppercase font-bold">Hari</span>
+          </div>
+          <div class="text-2xl font-bold pt-3 text-red-300">:</div>
+          <div
+            class="flex flex-col items-center bg-white border border-red-200 w-[4.5rem] h-[4.5rem] justify-center rounded-xl shadow-sm">
+            <span id="cd-hours" class="text-2xl font-extrabold leading-none">00</span>
+            <span class="text-[10px] uppercase font-bold">Jam</span>
+          </div>
+          <div class="text-2xl font-bold pt-3 text-red-300">:</div>
+          <div
+            class="flex flex-col items-center bg-white border border-red-200 w-[4.5rem] h-[4.5rem] justify-center rounded-xl shadow-sm">
+            <span id="cd-mins" class="text-2xl font-extrabold leading-none">00</span>
+            <span class="text-[10px] uppercase font-bold">Minit</span>
+          </div>
+          <div class="text-2xl font-bold pt-3 text-red-300">:</div>
+          <div
+            class="flex flex-col items-center bg-white border border-red-200 w-[4.5rem] h-[4.5rem] justify-center rounded-xl shadow-sm">
+            <span id="cd-secs" class="text-2xl font-extrabold leading-none">00</span>
+            <span class="text-[10px] uppercase font-bold">Saat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 13 — FAQ
+  ══════════════════════════════════════ -->
+    <section class="py-12 bg-white">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 reveal">
+        <h2 class="text-2xl font-extrabold mb-7 text-center">Soalan Lazim (FAQ)</h2>
+        <div class="space-y-3">
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button
+              class="w-full text-left px-5 py-4 font-semibold text-sm focus:outline-none flex justify-between items-center bg-white hover:bg-gray-50 transition-colors"
+              onclick="toggleAccordion(this)">
+              <span>Adakah harga berubah jika ada kerosakan lain?</span>
+              <i class="fas fa-chevron-down text-brand-red text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content px-5 bg-white border-t border-gray-100">
+              <p class="py-4 text-gray-600 text-sm">Kami amat telus. Anda perlu menghubungi Pengurus Cawangan Berek 12
+                untuk penerangan harga, dan persetujuan anda adalah diwajibkan jika ada sebarang penambahan skop kerja.
+              </p>
+            </div>
+          </div>
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button
+              class="w-full text-left px-5 py-4 font-semibold text-sm focus:outline-none flex justify-between items-center bg-white hover:bg-gray-50 transition-colors"
+              onclick="toggleAccordion(this)">
+              <span>Berapa lama proses pemasangan?</span>
+              <i class="fas fa-chevron-down text-brand-red text-sm transition-transform duration-300"></i>
+            </button>
+            <div class="accordion-content px-5 bg-white border-t border-gray-100">
+              <p class="py-4 text-gray-600 text-sm">Kerja pemasangan akan dijalankan secepat mungkin secara profesional
+                sehingga kenderaan selamat diserahkan semula kepada pelanggan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       SECTION 14 — FINAL CTA
+  ══════════════════════════════════════ -->
+    <section class="py-16 bg-brand-black text-white text-center relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none"
+        style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(227,6,19,.18), transparent);"></div>
+      <div class="relative max-w-3xl mx-auto px-4 reveal">
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">
+          Jangan Tunggu Steering Lock Berlaku Ketika Memandu.
+        </h2>
+        <p class="text-gray-400 text-base mb-8 max-w-xl mx-auto">
+          Anda boleh pilih untuk tutup website ini sekarang dan terus memandu dengan steering rack yang berbunyi. Tetapi
+          adakah anda sanggup mempertaruhkan keselamatan keluarga anda sekiranya stereng tersebut tersekat di selekoh
+          esok hari?
+        </p>
+        <a href="#harga"
+          class="inline-block bg-brand-red text-white font-extrabold text-xl py-5 px-10 rounded-xl pulse-btn shadow-2xl hover:bg-red-700 transition uppercase tracking-wide">
+          TEMPAH SLOT PROMOSI SEKARANG
+        </a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+    <footer class="bg-zinc-950 text-zinc-400 py-12 md:py-16 border-t border-zinc-900 pb-28 md:pb-16 relative z-50 pointer-events-auto">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 border-b border-zinc-800 pb-10 mb-8">
+          <!-- Brand -->
+          <div class="col-span-1 md:col-span-1">
+            <div class="mb-5">
+              <img src="images/azam-auto-logo-nobg.png" alt="Azam Auto Logo" class="h-16 md:h-20 w-auto">
+            </div>
+            <p class="text-sm leading-relaxed mb-6">Pusat pakar pembaikan dan penukaran sistem Electric Power Steering
+              (EPS) dengan jaminan kualiti tanpa kompromi.</p>
+            <div class="flex items-center gap-4">
+              <a href="https://web.facebook.com/people/Gearbox-Specialist-Azam-Auto/61582454548781/" target="_blank"
+                class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-white hover:bg-[#1877F2] transition-colors duration-300"><i
+                  class="fab fa-facebook-f text-sm"></i></a>
+              <a href="https://www.tiktok.com/@azamautoberek12" target="_blank"
+                class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-white hover:bg-black transition-colors duration-300"><i
+                  class="fab fa-tiktok text-sm"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=60199354427&text=Hi%20Azam%20Auto%20Body%20Work%20%26%20Service%20Berek%2012.%0A%0AUntuk%20lokasi%20kami%20boleh%20tekan%20link%20di%20bawah%0A%0Ahttps%3A%2F%2Fmaps.app.goo.gl%2FvcQzd91dUz91AkWN8"
+                target="_blank"
+                class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-white hover:bg-[#25D366] transition-colors duration-300"><i
+                  class="fab fa-whatsapp text-sm"></i></a>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-4">Hubungi Kami</h4>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3 group">
+                <i class="fas fa-phone mt-1 text-brand-red group-hover:text-white transition-colors"></i>
+                <a href="https://api.whatsapp.com/send?phone=60199354427&text=Hi%20Azam%20Auto%20Body%20Work%20%26%20Service%20Berek%2012.%0A%0AUntuk%20lokasi%20kami%20boleh%20tekan%20link%20di%20bawah%0A%0Ahttps%3A%2F%2Fmaps.app.goo.gl%2FvcQzd91dUz91AkWN8"
+                  target="_blank" class="hover:text-white transition-colors cursor-pointer block">+60 19-935 4427
+                  (WhatsApp / Call)</a>
+              </li>
+              <li class="flex items-start gap-3 group">
+                <i class="fas fa-clock mt-1 text-brand-red group-hover:text-white transition-colors"></i>
+                <span>Sabtu - Khamis<br><span class="text-xs text-zinc-500">9:00 AM - 6:00 PM</span><br><span
+                    class="text-xs text-brand-red font-bold">Jumaat Tutup</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Location -->
+          <div>
+            <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-4">Lokasi Cawangan</h4>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-3 group">
+                <i class="fas fa-location-dot mt-1 text-brand-red group-hover:text-white transition-colors"></i>
+                <a href="https://www.google.com/maps/place/Azam+Auto+Body+Works+%26+Service+Berek+12+(Specialist+Steering+Rack)/@6.0955683,102.204104,13z/data=!4m6!3m5!1s0x31b6b1000c3c851b:0xa07f96f9827ba04!8m2!3d6.1214479!4d102.2564301!16s%2Fg%2F11lz637w_n?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank" class="hover:text-white transition-colors block">
+                  <strong>Azam Auto Body Work &amp; Service Berek 12</strong><br>
+                  1219, Jalan Long Yunus,<br>
+                  Kampung Paya Bemban,<br>
+                  15200 Kota Bharu, Kelantan.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+          <p>&copy; 2026 Azam Auto. Hak Cipta Terpelihara.</p>
+          <p class="text-zinc-500">Promosi dan harga tertakluk kepada Terma &amp; Syarat semasa.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- STICKY CTA Mobile -->
+    <div
+      class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-3 shadow-[0_-4px_12px_rgba(0,0,0,.08)] z-40 flex justify-between items-center">
+      <div>
+        <p class="text-[10px] text-gray-500 font-bold uppercase">Bermula Dari</p>
+        <p class="text-xl font-extrabold text-brand-red leading-none">RM750</p>
+      </div>
+      <a href="#harga"
+        class="bg-brand-red text-white font-bold py-3 px-6 rounded-xl text-sm shadow-md pulse-btn whitespace-nowrap">
+        TEMPAH SEKARANG
+      </a>
+    </div>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/60178441058" target="_blank"
+      class="fixed bottom-24 md:bottom-6 right-4 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform z-50 wa-pulse">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ── SCRIPTS ── -->
+    <script>
+      // Reveal on Scroll
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Before/After Slider
+      const slider = document.getElementById('compare-slider');
+      const fgImg = document.getElementById('foreground-img');
+      if (slider && fgImg) slider.addEventListener('input', e => fgImg.style.width = `${e.target.value}%`);
+
+      // Accordion
+      function toggleAccordion(btn) {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          icon.style.transform = 'rotate(0deg)';
+        } else {
+          document.querySelectorAll('.accordion-content').forEach(el => el.style.maxHeight = null);
+          document.querySelectorAll('.fa-chevron-down').forEach(el => el.style.transform = 'rotate(0deg)');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.style.transform = 'rotate(180deg)';
+        }
+      }
+
+      // Countdown Timer
+      const target = new Date("July 31, 2026 23:59:59").getTime();
+      setInterval(() => {
+        const diff = target - Date.now();
+        if (diff < 0) return;
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cd-days').innerText = String(d).padStart(2, '0');
+        document.getElementById('cd-hours').innerText = String(h).padStart(2, '0');
+        document.getElementById('cd-mins').innerText = String(m).padStart(2, '0');
+        document.getElementById('cd-secs').innerText = String(s).padStart(2, '0');
+      }, 1000);
+    </script>
+    <!-- FLOATING SIDE NAV (Premium Dots) -->
+    <div
+      class="hidden sm:flex fixed right-4 md:right-6 top-1/2 -translate-y-1/2 flex-col gap-5 z-50 bg-black/40 backdrop-blur-md py-5 px-3.5 rounded-full border border-white/10 shadow-2xl">
+      <a href="#utama" class="group flex items-center justify-center relative">
+        <span
+          class="absolute right-6 bg-zinc-900 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none tracking-widest uppercase border border-white/10 shadow-lg">Utama</span>
+        <div
+          class="w-2 h-2 rounded-full bg-white/60 group-hover:bg-brand-red group-hover:scale-[2] transition-all duration-300">
+        </div>
+      </a>
+      <a href="#simptom" class="group flex items-center justify-center relative">
+        <span
+          class="absolute right-6 bg-zinc-900 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none tracking-widest uppercase border border-white/10 shadow-lg">Simptom</span>
+        <div
+          class="w-2 h-2 rounded-full bg-white/60 group-hover:bg-brand-red group-hover:scale-[2] transition-all duration-300">
+        </div>
+      </a>
+      <a href="#punca" class="group flex items-center justify-center relative">
+        <span
+          class="absolute right-6 bg-zinc-900 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none tracking-widest uppercase border border-white/10 shadow-lg">Punca</span>
+        <div
+          class="w-2 h-2 rounded-full bg-white/60 group-hover:bg-brand-red group-hover:scale-[2] transition-all duration-300">
+        </div>
+      </a>
+      <a href="#harga" class="group flex items-center justify-center relative">
+        <span
+          class="absolute right-6 bg-zinc-900 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none tracking-widest uppercase border border-white/10 shadow-lg">Harga</span>
+        <div
+          class="w-2 h-2 rounded-full bg-white/60 group-hover:bg-brand-red group-hover:scale-[2] transition-all duration-300">
+        </div>
+      </a>
+    </div>
+
+    <!-- React Slider Component -->
+    <script type="module" src="/src/SliderComponent.jsx"></script>
+</body>
+
+</html>
