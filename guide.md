@@ -234,8 +234,8 @@
     <!-- SECTION 5: KENAPA PILIH AZAM AUTO? -->
     <section class="py-20 bg-brand-gray">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Mengapa Selesaikan Hari Ini Di Azam Auto Berek 12?</h2>
-            <p class="text-gray-600 mb-16">Kami mahu mengembalikan penjenamaan Cawangan Berek 12 kami sebagai Pusat Pakar (Speciality) dalam pembaikan dan penukaran steering rack kenderaan EPS anda!</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Kenapa Di Azam Auto Berek 12?</h2>
+            <p class="text-gray-600 mb-16">Kami mahu mengembalikan brand Cawangan Berek 12 kami sebagai Pusat Pakar (Speciality) dalam pembaikan dan penukaran steering rack kenderaan EPS anda!</p>
             
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
                 <!-- Benefit 1 -->
@@ -248,7 +248,7 @@
                 <div class="flex flex-col items-center hover-card p-6 bg-white rounded-xl shadow-sm border border-gray-100">
                     <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-brand-black text-xl mb-4"><i class="fas fa-wallet"></i></div>
                     <h4 class="font-bold text-md mb-2">Jimat Kos</h4>
-                    <p class="text-xs text-gray-500">Rawat sekarang sebelum kos pembaikan melambung berkali ganda!</p>
+                    <p class="text-xs text-gray-500">Rawat sekarang sebelum kos pembaikan melambung berkali ganda! kami periksa dan tukar apa yang perlu sahaja</p>
                 </div>
                 <!-- Benefit 3 -->
                 <div class="flex flex-col items-center hover-card p-6 bg-white rounded-xl shadow-sm border border-gray-100">
@@ -311,7 +311,7 @@
                     <p class="font-bold text-sm text-brand-red">Selesai</p>
                 </div>
             </div>
-            <p class="text-gray-500 text-sm mt-10">Kerja pemasangan akan dijalankan secepat mungkin secara profesional sehingga kenderaan selamat diserahkan semula kepada pelanggan.</p>
+            <p class="text-gray-500 text-sm mt-10">Kerja pemasangan akan dijalankan dengan berhati-hati secara profesional sehingga kenderaan selamat diserahkan semula kepada pelanggan.</p>
         </div>
     </section>
 
@@ -385,7 +385,7 @@
                 <ol class="list-decimal list-inside space-y-3 text-gray-700 font-medium">
                     <li>Klik butang tempahan di atas untuk ke Payment Gateway.</li>
                     <li>Bayar deposit tempahan (booking) anda secara dalam talian (online).</li>
-                    <li>Setelah berjaya, resit bukti pembayaran <strong class="text-brand-red">WAJIB</strong> dihantar terus ke nombor WhatsApp: <strong>+60 17-844 1058</strong> untuk pengesahan slot.</li>
+                    <li>Setelah berjaya, resit bukti pembayaran <strong class="text-brand-red">WAJIB</strong> dihantar terus ke nombor WhatsApp: <a href="https://wa.me/60178441058" target="_blank" class="font-bold underline text-blue-600 hover:text-green-500 transition-colors">+60 17-844 1058</a> untuk pengesahan slot.</li>
                 </ol>
                 <p class="text-xs text-gray-500 mt-4 italic text-center">* Pemasangan tertakluk kepada sistem temujanji (booking) yang diwajibkan bagi mengesahkan slot harian anda.</p>
             </div>
@@ -403,7 +403,7 @@
             </div>
             <h2 class="text-3xl font-extrabold mb-4 uppercase tracking-wide">Jaminan Kualiti 3 Bulan</h2>
             <p class="text-gray-400 max-w-2xl text-lg">
-                Setiap pemasangan steering rack di Azam Auto Berek 12 didatangkan bersama jaminan kualiti dan waranti selama 3 bulan. Anda dipandu dengan tenang, 100% tanpa risiko kerugian.
+                Setiap pemasangan steering rack di Azam Auto Berek 12 didatangkan bersama jaminan kualiti dan waranti selama 3 bulan. Anda memandu dengan tenang, 100% tanpa risiko kerugian (selagi tak okay , datang lagi kami baiki hingga puas hati).
             </p>
         </div>
     </section>
@@ -413,24 +413,65 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-16">Apa Kata Pelanggan Kami?</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- Text Review 1 -->
-                <div class="bg-gray-50 p-8 rounded-xl text-left border border-gray-100">
-                    <div class="text-brand-yellow text-xl mb-4">★★★★★</div>
-                    <p class="text-gray-700 italic mb-4">"Kereta rasa macam baru keluar kedai, enjin dah tak bergegar macam dulu."</p>
-                    <p class="font-bold">- Hafiz, Alza</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <!-- Google Review 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow relative text-left">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center font-bold text-lg">Z</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-sm">Zamzuri Ismail</h3>
+                                <div class="flex text-brand-yellow text-xs mt-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="w-5 h-5">
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4 flex-grow">"This another friendly and professional workshop tho. They provides many kinds of automotive services under one roof.. convenient. Best part is, fast service & recovery. The owner I think really friendly, plus the worker as well."</p>
+                    <a href="https://maps.app.goo.gl/F3hpPjYBVyvSeVAF9" target="_blank" class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1 mt-auto">
+                        Baca di Google <i class="fas fa-external-link-alt text-xs"></i>
+                    </a>
                 </div>
-                <!-- Text Review 2 -->
-                <div class="bg-gray-50 p-8 rounded-xl text-left border border-gray-100">
-                    <div class="text-brand-yellow text-xl mb-4">★★★★★</div>
-                    <p class="text-gray-700 italic mb-4">"Hadiah dekat husband, husband suka! Memang kita rasa aman damai..."</p>
-                    <p class="font-bold">- Pn. Aisyah</p>
+
+                <!-- Google Review 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow relative text-left">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-lg">S</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-sm">SYAFIQ HAKIM</h3>
+                                <div class="flex text-brand-yellow text-xs mt-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="w-5 h-5">
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4 flex-grow">"Best service from Azam Auto. My car couldn't move due to EPB system jam problem on the first day of Raya Haji... Pomen came directly to my house to solve my car problem. Highly recommended 👍"</p>
+                    <a href="https://maps.app.goo.gl/kRtnJzbJgMpfqEB29" target="_blank" class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1 mt-auto">
+                        Baca di Google <i class="fas fa-external-link-alt text-xs"></i>
+                    </a>
                 </div>
-                <!-- Text Review 3 -->
-                <div class="bg-gray-50 p-8 rounded-xl text-left border border-gray-100">
-                    <div class="text-brand-yellow text-xl mb-4">★★★★★</div>
-                    <p class="text-gray-700 italic mb-4">"Mula-mula ingat mahal, rupanya separuh harga dari pusat servis luar."</p>
-                    <p class="font-bold">- Syafiq, Myvi</p>
+
+                <!-- Google Review 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow relative text-left">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-bold text-lg">H</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-sm">hadi die</h3>
+                                <div class="flex text-brand-yellow text-xs mt-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="w-5 h-5">
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-4 flex-grow">"kedai terbaik bg saya..servis cepat..spare part ada terus x perlu tunggu lama2..ruang menunggu full aircond siap kerusi urut😊 harga pun berpatutan..memang recomended"</p>
+                    <a href="https://maps.app.goo.gl/DAgPswXNz6gmorH48" target="_blank" class="text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1 mt-auto">
+                        Baca di Google <i class="fas fa-external-link-alt text-xs"></i>
+                    </a>
                 </div>
             </div>
 
@@ -511,7 +552,7 @@
                     </button>
                     <div class="accordion-content px-6 bg-white border-t border-gray-100">
                         <p class="py-4 text-gray-600 text-sm">
-                            Kerja pemasangan akan dijalankan secepat mungkin secara profesional sehingga kenderaan selamat diserahkan semula kepada pelanggan.
+                            Kerja pemasangan akan dijalankan dengan berhati-hati secara profesional sehingga kenderaan selamat diserahkan semula kepada pelanggan. Kami akan meminta pelanggan tinggalkan kenderaan di bengkel.
                         </p>
                     </div>
                 </div>
@@ -532,6 +573,60 @@
             <a href="#harga" class="inline-block bg-brand-red text-white font-extrabold text-2xl py-6 px-12 rounded-xl pulse-btn shadow-2xl hover:bg-red-700 transition uppercase tracking-wide">
                 TEMPAH SLOT PROMOSI SEKARANG
             </a>
+        </div>
+    </section>
+
+    <!-- SECTION 15: TIKTOK -->
+    <section class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 text-center reveal">
+            <i class="fab fa-tiktok text-4xl text-black mb-4"></i>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-8">Ikuti kami di TikTok</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <a href="https://www.tiktok.com/@azamautoberek12/video/7615810579462196498" target="_blank" class="group relative block w-full max-w-[325px] bg-black shadow-lg rounded-2xl overflow-hidden aspect-[9/16] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 mx-auto">
+                    <img src="images/tiktok-1.jpg" alt="TikTok Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-[#ff0050] transition-colors duration-300 border border-white/20 shadow-lg">
+                            <i class="fas fa-play text-2xl text-white ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white text-left z-10">
+                        <div class="flex items-center gap-2 text-sm font-bold">
+                            <i class="fab fa-tiktok text-xl text-[#00f2fe]"></i> Tonton di TikTok
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.tiktok.com/@azamautoberek12/video/7649311929923603719" target="_blank" class="group relative block w-full max-w-[325px] bg-black shadow-lg rounded-2xl overflow-hidden aspect-[9/16] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 mx-auto">
+                    <img src="images/tiktok-2.jpg" alt="TikTok Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-[#ff0050] transition-colors duration-300 border border-white/20 shadow-lg">
+                            <i class="fas fa-play text-2xl text-white ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white text-left z-10">
+                        <div class="flex items-center gap-2 text-sm font-bold">
+                            <i class="fab fa-tiktok text-xl text-[#00f2fe]"></i> Tonton di TikTok
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.tiktok.com/@azamautoberek12/video/7603400710524374293" target="_blank" class="group relative block w-full max-w-[325px] bg-black shadow-lg rounded-2xl overflow-hidden aspect-[9/16] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 mx-auto">
+                    <img src="images/tiktok-3.jpg" alt="TikTok Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-[#ff0050] transition-colors duration-300 border border-white/20 shadow-lg">
+                            <i class="fas fa-play text-2xl text-white ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white text-left z-10">
+                        <div class="flex items-center gap-2 text-sm font-bold">
+                            <i class="fab fa-tiktok text-xl text-[#00f2fe]"></i> Tonton di TikTok
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
