@@ -520,13 +520,21 @@
             <h3 class="font-bold text-base mb-1">Stereng Berat</h3>
             <p class="text-sm text-gray-500 leading-relaxed">Tiba-tiba sukar membelok terutama ketika parkir.</p>
           </div>
-          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover-card reveal group">
+          <div
+            class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover-card reveal group flex flex-col">
             <div
               class="w-12 h-12 bg-red-50 text-brand-red rounded-xl flex items-center justify-center mx-auto mb-4 text-xl group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
               <i class="fas fa-volume-up"></i>
             </div>
             <h3 class="font-bold text-base mb-1">Bunyi "Kluk-Kluk"</h3>
-            <p class="text-sm text-gray-500 leading-relaxed">Ketukan kasar pada kereta.</p>
+            <p class="text-sm text-gray-500 leading-relaxed flex-grow">Ketukan kasar pada kereta.</p>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <button onclick="document.getElementById('audio-kluk').play()"
+                class="bg-brand-red/10 text-brand-red hover:bg-brand-red hover:text-white w-full py-2.5 rounded-xl text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2">
+                <i class="fas fa-play-circle text-lg"></i> Dengar Bunyi
+              </button>
+              <audio id="audio-kluk" src="images/sound.mp3" preload="none"></audio>
+            </div>
           </div>
           <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover-card reveal group">
             <div
@@ -1277,8 +1285,8 @@
               </li>
               <li class="flex items-start gap-3 group mt-2">
                 <i class="fab fa-waze mt-1 text-[#33ccff] group-hover:text-white transition-colors"></i>
-                <a href="https://www.waze.com/ul?ll=6.1214479,102.2564301&navigate=yes"
-                  target="_blank" class="hover:text-white transition-colors block">
+                <a href="https://www.waze.com/ul?ll=6.1214479,102.2564301&navigate=yes" target="_blank"
+                  class="hover:text-white transition-colors block">
                   <strong>Waze</strong><br>
                   1219, Jalan Long Yunus,<br>
                   Kampung Paya Bemban,<br>
@@ -1300,8 +1308,8 @@
     <div
       class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-3 shadow-[0_-4px_12px_rgba(0,0,0,.08)] z-40 flex justify-between items-center">
       <div>
-        <p class="text-[10px] text-gray-500 font-bold uppercase">Bermula Dari</p>
-        <p class="text-xl font-extrabold text-brand-red leading-none">RM750</p>
+        <p class="text-[10px] text-gray-500 font-bold uppercase">Tempahan</p>
+        <p class="text-xl font-extrabold text-brand-red leading-none">RM50 Sahaja</p>
       </div>
       <a href="https://azamauto.onpay.my/order/form/3"
         class="bg-brand-red text-white font-bold py-3 px-6 rounded-xl text-sm shadow-md pulse-btn whitespace-nowrap">
