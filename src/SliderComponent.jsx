@@ -6,8 +6,8 @@ const SliderComponent = () => {
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
       <ReactCompareSlider
-        itemOne={<ReactCompareSliderImage src="images/rusty_steering_rack_1783398632760.png" alt="Sebelum - Steering Rack Berkarat" />}
-        itemTwo={<ReactCompareSliderImage src="images/clean_steering_rack_1783398623776.png" alt="Selepas - Stereng Bersih" />}
+        itemOne={<ReactCompareSliderImage src="images/before.jpeg" alt="Sebelum - Steering Rack Berkarat" />}
+        itemTwo={<ReactCompareSliderImage src="images/after.jpeg" alt="Selepas - Stereng Bersih" />}
         style={{ width: '100%', height: '100%' }}
       />
       {/* Overlays */}
