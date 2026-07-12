@@ -1,13 +1,15 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
+import beforeImg from '../images/before.jpeg';
+import afterImg from '../images/after.jpeg';
 
 const SliderComponent = () => {
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
       <ReactCompareSlider
-        itemOne={<ReactCompareSliderImage src="images/before.jpeg" alt="Sebelum - Steering Rack Berkarat" />}
-        itemTwo={<ReactCompareSliderImage src="images/after.jpeg" alt="Selepas - Stereng Bersih" />}
+        itemOne={<ReactCompareSliderImage src={beforeImg} alt="Sebelum - Steering Rack Berkarat" />}
+        itemTwo={<ReactCompareSliderImage src={afterImg} alt="Selepas - Stereng Bersih" />}
         style={{ width: '100%', height: '100%' }}
       />
       {/* Overlays */}
